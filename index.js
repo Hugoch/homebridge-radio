@@ -41,9 +41,6 @@ RadioAccessory.prototype.setState = function(state, callback) {
         }
         this.log("spawning a new player");
         this.player = spawn('mplayer', [this.url]);
-        this.player.on('close', function(code, signal){
-            this.log('child process terminated due to receipt of signal ' + signal);
-        });
         this.player.stdout.setEncoding('utf8');
         var getData = function (data) {
             //stdout handling for debugging
