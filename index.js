@@ -33,7 +33,7 @@ RadioAccessory.prototype.getState = function(callback) {
 RadioAccessory.prototype.setState = function(state, callback) {
     this.log("Set state to %s", state);
     var killPlayer = function(){
-        this.player.kill('SIGHUP');
+        this.player.kill('SIGINT');
     }
     if(state){
         if(this.player != null){
