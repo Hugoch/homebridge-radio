@@ -40,7 +40,7 @@ RadioAccessory.prototype.setState = function(state, callback) {
             killPlayer.apply(this);
         }
         this.log("spawning a new player");
-        this.player = spawn('vlc', [this.url]);
+        this.player = spawn('cvlc', [this.url]);
         this.player.stdout.setEncoding('utf8');
         var getData = function (data) {
             //stdout handling for debugging
